@@ -6,12 +6,31 @@ from requests.exceptions import ConnectionError
 web = datetime.datetime.now()
 waktu = web.strftime("%H:%M:%S / %d-%m-%Y ")
 
+logo = """
+ ____  _   _ _____ _     _  __   __
+/ ___|| | | | ____| |   | | \ \ / /
+\___ \| |_| |  _| | |   | |  \ V /
+ ___) |  _  | |___| |___| |___| |
+|____/|_| |_|_____|_____|_____|_|
+__  __  _   _  ___    _    _   _
+\ \/ / | \ | |/ _ \  / \  | | | |
+ \  /  |  \| | | | |/ _ \ | |_| |
+ /  \  | |\  | |_| / ___ \|  _  |
+/_/\_\ |_| \_|\___/_/   \_\_| |_|
+ ---------------------------------------------------
+ ➣ Author    : Shelly X Noah
+ ➣ GitHub    : https://github.com/Shelly-XD
+ ---------------------------------------------------
+ ➣ Instagram : -----
+ ➣ Facebook  : -----\n"""
+
 def tokenz():
 	os.system("clear")
 	try:
 		token = open("login.txt", "r")
 		menu()
 	except KeyError, IOError:
+                print logo
 		print("\033[0;97m * sebelum masuk ke menu harus login terlebih dahulu")
 		print(" * untuk login silakan masukan token facebook anda")
 		print(" ? ketik '\033[0;93mhelp\033[0;97m' untuk lihat tutorial ambil token facebook")
@@ -47,6 +66,7 @@ def menu():
 		exit(" ! tidak ada koneksi internet")
 	komen = []
 	os.system("clear")
+        print logo
 	print(" * pengguna aktif : %s"%(nama))
 	print("\n\033[0;97m ? gunakan tanda '\033[0;93m<>\033[0;97m' untuk ganti garis baru")
 	print(" * ketik '\033[0;91mhapus\033[0;97m' untuk hapus token facebook")
